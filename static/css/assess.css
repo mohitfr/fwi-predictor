@@ -1,0 +1,135 @@
+.page-head {
+    padding: 2.25rem 1.5rem 1.75rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.page-head h1 {
+    font-family: var(--ff-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.page-head p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.form-section {
+    padding: 2.5rem 1.5rem 4rem;
+}
+
+.errors-box {
+    background: #fdf1f1;
+    border: 1px solid #e8b8b8;
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.errors-box .errors-title {
+    font-weight: 700;
+    color: var(--crimson);
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+}
+
+.errors-box ul {
+    padding-left: 1.2rem;
+}
+
+.errors-box li {
+    color: var(--crimson);
+    font-size: 0.84rem;
+}
+
+.form-card {
+    padding: 2rem;
+}
+
+.group-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-bottom: 1.1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.group-head .group-num {
+    font-family: var(--ff-display);
+    font-weight: 700;
+    color: var(--forest-soft);
+    font-size: 0.95rem;
+}
+
+.group-head h2 {
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+}
+
+.fields-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 1.1rem;
+    margin-bottom: 2.25rem;
+}
+
+.field label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.84rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.field label .unit {
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 0.76rem;
+}
+
+.field .help {
+    font-size: 0.74rem;
+    color: var(--muted);
+    margin-bottom: 0.45rem;
+}
+
+.field input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1.5px solid var(--border);
+    border-radius: 7px;
+    font-family: var(--ff-body);
+    font-size: 0.95rem;
+    background: var(--paper-card);
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.field input::-webkit-outer-spin-button,
+.field input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.field input:focus {
+    border-color: var(--forest-mid);
+    box-shadow: 0 0 0 3px rgba(61, 102, 80, 0.1);
+}
+
+.field input::placeholder {
+    color: #aab3a8;
+}
+
+.submit-bar {
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+}

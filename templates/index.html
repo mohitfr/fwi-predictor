@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fire Danger Assessment Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
+</head>
+
+<body>
+    <div class="topbar">
+        <span>Forest Fire Management Division</span>
+        <span>Field Risk Assessment System</span>
+    </div>
+
+    <nav>
+        <a href="{{ url_for('home') }}" class="nav-brand">
+            <span class="mark">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M12 2L2 22h20L12 2z" />
+                </svg>
+            </span>
+            <span class="brand-text">
+                <span class="brand-name">FireWatch</span>
+                <span class="brand-sub">Daily Risk Assessment</span>
+            </span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}" class="active">Overview</a></li>
+            <li><a href="{{ url_for('assess_form') }}">New Assessment</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="hero-eyebrow">Daily Field Tool</div>
+                <h1>Assess fire danger before it becomes a fire.</h1>
+                <p>
+                    Enter today's field readings — temperature, humidity, wind, and fuel
+                    moisture codes — and get an immediate danger rating with recommended
+                    action for your patrol area.
+                </p>
+                <div class="hero-actions">
+                    <a href="{{ url_for('assess_form') }}" class="btn btn-primary btn-lg">Start Assessment</a>
+                    <a href="#how" class="btn btn-outline btn-lg">How it works</a>
+                </div>
+            </div>
+
+            <div class="hero-panel">
+                <div class="hero-panel-title">Danger Rating Scale</div>
+                <div class="scale-row">
+                    <span class="scale-name"><span class="scale-dot" style="background: #3d6650"></span>Low</span>
+                    <span class="scale-range">0 to 5</span>
+                </div>
+                <div class="scale-row">
+                    <span class="scale-name"><span class="scale-dot" style="background: #b8862e"></span>Moderate</span>
+                    <span class="scale-range">5 to 12</span>
+                </div>
+                <div class="scale-row">
+                    <span class="scale-name"><span class="scale-dot" style="background: #a8552f"></span>High</span>
+                    <span class="scale-range">12 to 20</span>
+                </div>
+                <div class="scale-row">
+                    <span class="scale-name"><span class="scale-dot" style="background: #9c3b3b"></span>Very
+                        High</span>
+                    <span class="scale-range">20 and above</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info">
+        <div class="container info-grid">
+            <div class="info-card">
+                <div class="num">7</div>
+                <h3>Field Readings</h3>
+                <p>
+                    Weather conditions and fuel moisture codes taken from your station,
+                    entered directly.
+                </p>
+            </div>
+            <div class="info-card">
+                <div class="num">Under 1 min</div>
+                <h3>Assessment Time</h3>
+                <p>
+                    Get a danger rating and recommended action immediately, no waiting
+                    on regional reports.
+                </p>
+            </div>
+            <div class="info-card">
+                <div class="num">4</div>
+                <h3>Danger Levels</h3>
+                <p>
+                    Low, Moderate, High, and Very High, each paired with a specific
+                    recommended response.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how" id="how">
+        <div class="container">
+            <h2>How to use this tool</h2>
+            <div class="how-steps">
+                <div class="how-step">
+                    <h4>Take your readings</h4>
+                    <p>
+                        Record temperature, humidity, wind speed, and rainfall from your
+                        station, plus the standard fire weather codes.
+                    </p>
+                </div>
+                <div class="how-step">
+                    <h4>Enter the values</h4>
+                    <p>
+                        Fill in the assessment form. Each field shows its valid range and
+                        what it measures.
+                    </p>
+                </div>
+                <div class="how-step">
+                    <h4>Review the rating</h4>
+                    <p>
+                        Get an immediate danger level with a recommended action for your
+                        team to follow.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <a href="{{ url_for('assess_form') }}" class="btn btn-primary btn-lg">Begin Today's Assessment</a>
+    </section>
+
+    <footer>
+        Forest Fire Management Division — Field Risk Assessment System
+    </footer>
+</body>
+
+</html>

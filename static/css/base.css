@@ -1,0 +1,205 @@
+/* ── RESET ── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --forest: #2c4a3a;
+    --forest-mid: #3d6650;
+    --forest-soft: #6b9080;
+    --paper: #f7f5f0;
+    --paper-card: #ffffff;
+    --ink: #1f2b24;
+    --muted: #6e7c6e;
+    --border: #dde3d8;
+    --amber: #b8862e;
+    --rust: #a8552f;
+    --crimson: #9c3b3b;
+    --ff-display: 'Source Serif 4', Georgia, serif;
+    --ff-body: 'Inter', sans-serif;
+    --radius: 10px;
+    --shadow: 0 1px 3px rgba(31, 43, 36, 0.08), 0 1px 2px rgba(31, 43, 36, 0.06);
+    --shadow-md: 0 4px 16px rgba(31, 43, 36, 0.10);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--ff-body);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+    font-size: 15px;
+}
+
+/* ── TOP BAR ── */
+.topbar {
+    background: var(--forest);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.78rem;
+    padding: 0.4rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 0.01em;
+}
+
+/* ── NAV ── */
+nav {
+    background: var(--paper-card);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+    color: var(--ink);
+}
+
+.nav-brand .mark {
+    width: 38px;
+    height: 38px;
+    background: var(--forest);
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+.nav-brand .mark svg {
+    width: 20px;
+    height: 20px;
+}
+
+.nav-brand .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.nav-brand .brand-name {
+    font-family: var(--ff-display);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--ink);
+}
+
+.nav-brand .brand-sub {
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    transition: background 0.15s, color 0.15s;
+}
+
+.nav-links a:hover {
+    background: var(--paper);
+    color: var(--ink);
+}
+
+.nav-links a.active {
+    background: var(--forest);
+    color: white;
+}
+
+/* ── CONTAINER ── */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.container-narrow {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ── BUTTONS ── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.6rem;
+    border-radius: 7px;
+    font-family: var(--ff-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1.5px solid transparent;
+    transition: all 0.15s;
+}
+
+.btn-primary {
+    background: var(--forest);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--forest-mid);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--forest);
+    border-color: var(--forest);
+}
+
+.btn-outline:hover {
+    background: var(--paper);
+}
+
+.btn-lg {
+    padding: 0.85rem 2rem;
+    font-size: 0.95rem;
+}
+
+/* ── CARD ── */
+.card {
+    background: var(--paper-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+/* ── FOOTER ── */
+footer {
+    background: var(--forest);
+    color: rgba(255, 255, 255, 0.55);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    font-size: 0.78rem;
+    margin-top: 4rem;
+}

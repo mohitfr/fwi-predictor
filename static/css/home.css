@@ -1,0 +1,197 @@
+.hero {
+    padding: 4rem 1.5rem 3.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-eyebrow {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--forest-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-family: var(--ff-display);
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 1.1rem;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+    max-width: 480px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 0.9rem;
+}
+
+.hero-panel {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.hero-panel-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+
+.scale-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.86rem;
+}
+
+.scale-row:last-child {
+    border-bottom: none;
+}
+
+.scale-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.6rem;
+}
+
+.scale-name {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.scale-range {
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ── INFO SECTION ── */
+.info {
+    padding: 3.5rem 1.5rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.info-card {
+    padding: 1.5rem;
+}
+
+.info-card .num {
+    font-family: var(--ff-display);
+    font-size: 1.6rem;
+    color: var(--forest);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.info-card h3 {
+    font-size: 0.92rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: var(--ink);
+}
+
+.info-card p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* ── HOW TO USE ── */
+.how {
+    background: var(--paper-card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 3.5rem 1.5rem;
+}
+
+.how h2 {
+    font-family: var(--ff-display);
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.how-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    counter-reset: step;
+}
+
+.how-step {
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.how-step::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--forest);
+    color: white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.how-step h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.how-step p {
+    font-size: 0.84rem;
+    color: var(--muted);
+}
+
+.cta-section {
+    text-align: center;
+    padding: 3rem 1.5rem 4rem;
+}
+
+@media (max-width: 760px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid,
+    .how-steps {
+        grid-template-columns: 1fr;
+    }
+}
