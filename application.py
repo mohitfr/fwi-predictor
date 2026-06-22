@@ -1,15 +1,20 @@
 """Flask routes. Business logic lives in predictor.py and validators.py."""
 
 import os
+from dotenv import load_dotenv
 from flask import Flask, render_template, request, redirect, url_for, session
 
 from config import fields, features, max_fwi_scale
 from predictor import FWIPredictor
 from validators import validate
 
-application = Flask(__name__)
-app = application
-app.secret_key = os.environ.get('SECRET_KEY', 'dev-key-change-in-production')
+load_dotenv()
+
+app = Flask(__name__)
+
+app.secret_key = os.environ.get('SECRET_KEY')
+if not app.secret_key:
+    raise RuntimeError('SECRET_KEY environment variable is not set.')
 
 predictor = FWIPredictor()
 
@@ -65,4 +70,4 @@ def not_found(e):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=os.environ.get('FLASK_DEBUG', 'False') == 'True')

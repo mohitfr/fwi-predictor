@@ -1,4 +1,4 @@
-"Application configuration and constants."
+"""Application configuration and constants."""
 
 # input fields the model expects, in order
 features = ['Temperature', 'RH', 'Ws', 'Rain', 'FFMC', 'DMC', 'ISI']

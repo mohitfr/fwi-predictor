@@ -1,4 +1,4 @@
-"Model loading and prediction logic."
+"""Model loading and prediction logic."""
 
 import pickle
 import pandas as pd
