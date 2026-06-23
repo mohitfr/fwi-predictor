@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fire Danger Assessment Tool</title>
+    <meta name="description" content="FireWatch — Fire danger assessment tool for forest fire management officials." />
+    <title>FireWatch — Fire Danger Assessment Tool</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
         href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
 </head>
@@ -43,11 +45,10 @@
             <div>
                 <div class="hero-eyebrow">Daily Field Tool</div>
                 <h1>Assess fire danger before it becomes a fire.</h1>
-                <p>
-                    Enter today's field readings — temperature, humidity, wind, and fuel
-                    moisture codes — and get an immediate danger rating with recommended
-                    action for your patrol area.
-                </p>
+                <p>Enter today's field readings — temperature, humidity, wind, and fuel
+                    moisture codes — and get an immediate danger rating with recommended action
+                    for your patrol area. For official use by authorised forest fire
+                    management personnel only.</p>
                 <div class="hero-actions">
                     <a href="{{ url_for('assess_form') }}" class="btn btn-primary btn-lg">Start Assessment</a>
                     <a href="#how" class="btn btn-outline btn-lg">How it works</a>
@@ -78,30 +79,147 @@
     </section>
 
     <section class="info">
-        <div class="container info-grid">
-            <div class="info-card">
-                <div class="num">7</div>
-                <h3>Field Readings</h3>
-                <p>
-                    Weather conditions and fuel moisture codes taken from your station,
-                    entered directly.
-                </p>
+        <div class="container">
+            <div class="info-body">
+                <div class="info-text">
+                    <h2>Why daily assessment matters</h2>
+                    <p>Fire weather conditions can shift significantly within hours.
+                        A site that carried low risk at dawn may reach critical danger
+                        levels by midday as temperature rises, humidity drops, and wind picks up.
+                        Waiting on regional forecasts or end-of-day reports leaves a gap
+                        that this tool is built to close.</p>
+                    <p>By taking readings at noon — when conditions are typically at their most
+                        severe — and running an immediate assessment, field teams can make informed
+                        decisions about patrol priorities, burn restrictions, and crew positioning
+                        before conditions escalate.</p>
+                </div>
+                <div class="info-stat">
+                    <div class="stat-num">Instant</div>
+                    <div class="stat-label">Results from field readings</div>
+                </div>
             </div>
-            <div class="info-card">
-                <div class="num">Under 1 min</div>
-                <h3>Assessment Time</h3>
-                <p>
-                    Get a danger rating and recommended action immediately, no waiting
-                    on regional reports.
-                </p>
+        </div>
+    </section>
+
+    <section class="ref">
+        <div class="container">
+            <div class="ref-inner">
+                <div class="section-head">Field input reference</div>
+                <div class="section-sub">What each reading measures and why it matters to the FWI calculation.</div>
+                <div class="ref-grid">
+                    <div class="ref-group">
+                        <div class="ref-group-title">Ignition conditions</div>
+                        <div class="ref-item">
+                            <div>
+                                <div class="ref-name">Temperature</div>
+                                <div class="ref-desc">Higher temperatures dry out fine fuels faster, lowering the
+                                    ignition threshold.</div>
+                            </div>
+                            <span class="ref-badge">°C</span>
+                        </div>
+                        <div class="ref-item">
+                            <div>
+                                <div class="ref-name">Relative Humidity</div>
+                                <div class="ref-desc">Low humidity draws moisture from surface litter, increasing
+                                    flammability.</div>
+                            </div>
+                            <span class="ref-badge">%</span>
+                        </div>
+                        <div class="ref-item">
+                            <div>
+                                <div class="ref-name">Rainfall</div>
+                                <div class="ref-desc">Recent rain suppresses surface fire risk. Even small amounts
+                                    matter.</div>
+                            </div>
+                            <span class="ref-badge">mm</span>
+                        </div>
+                        <div class="ref-item">
+                            <div>
+                                <div class="ref-name">FFMC</div>
+                                <div class="ref-desc">Fine Fuel Moisture Code — dryness of surface litter and fine
+                                    fuels.</div>
+                            </div>
+                            <span class="ref-badge">index</span>
+                        </div>
+                    </div>
+                    <div class="ref-group">
+                        <div class="ref-group-title">Spread conditions</div>
+                        <div class="ref-item">
+                            <div>
+                                <div class="ref-name">Wind Speed</div>
+                                <div class="ref-desc">Primary driver of fire spread rate. Small increases have large
+                                    effect at high FWI.</div>
+                            </div>
+                            <span class="ref-badge">km/h</span>
+                        </div>
+                        <div class="ref-item">
+                            <div>
+                                <div class="ref-name">ISI</div>
+                                <div class="ref-desc">Initial Spread Index — combines wind and FFMC to rate expected
+                                    spread rate.</div>
+                            </div>
+                            <span class="ref-badge">index</span>
+                        </div>
+                        <div class="ref-item">
+                            <div>
+                                <div class="ref-name">DMC</div>
+                                <div class="ref-desc">Duff Moisture Code — moisture in loosely compacted organic layers
+                                    below surface.</div>
+                            </div>
+                            <span class="ref-badge">index</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="info-card">
-                <div class="num">4</div>
-                <h3>Danger Levels</h3>
-                <p>
-                    Low, Moderate, High, and Very High, each paired with a specific
-                    recommended response.
-                </p>
+        </div>
+    </section>
+
+    <section class="bands">
+        <div class="container">
+            <div class="bands-inner">
+                <div class="section-head">Danger level reference</div>
+                <div class="section-sub">Typical field conditions and required response at each rating level.</div>
+                <div class="band-row">
+                    <div class="band-bar" style="background:#3d6650"></div>
+                    <div>
+                        <div class="band-level" style="color:#3d6650">Low</div>
+                        <div class="band-fwi">FWI 0 – 5</div>
+                    </div>
+                    <div class="band-conditions">Cool temperatures, high humidity, little wind. Fuels retain moisture.
+                        Fires unlikely to start and easy to control if they do.</div>
+                    <div class="band-action" style="color:#3d6650">Routine monitoring sufficient.</div>
+                </div>
+                <div class="band-row">
+                    <div class="band-bar" style="background:#b8862e"></div>
+                    <div>
+                        <div class="band-level" style="color:#b8862e">Moderate</div>
+                        <div class="band-fwi">FWI 5 – 12</div>
+                    </div>
+                    <div class="band-conditions">Warm and drying conditions. Surface fuels beginning to dry. Fires can
+                        start and spread but are generally controllable with standard resources.</div>
+                    <div class="band-action" style="color:#b8862e">Increase patrol frequency in dry zones.</div>
+                </div>
+                <div class="band-row">
+                    <div class="band-bar" style="background:#a8552f"></div>
+                    <div>
+                        <div class="band-level" style="color:#a8552f">High</div>
+                        <div class="band-fwi">FWI 12 – 20</div>
+                    </div>
+                    <div class="band-conditions">Hot, dry, and windy. Fine fuels critically dry. Fires spread rapidly
+                        and spotting ahead of the fire front is likely. Initial attack must be fast.</div>
+                    <div class="band-action" style="color:#a8552f">Restrict open burning. Brief field crews.</div>
+                </div>
+                <div class="band-row">
+                    <div class="band-bar" style="background:#9c3b3b"></div>
+                    <div>
+                        <div class="band-level" style="color:#9c3b3b">Very High</div>
+                        <div class="band-fwi">FWI 20+</div>
+                    </div>
+                    <div class="band-conditions">Extreme heat, very low humidity, strong winds. Fires are erratic and
+                        difficult to control. Any ignition source is dangerous.</div>
+                    <div class="band-action" style="color:#9c3b3b">Issue public advisory. Pre-position response teams.
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -140,7 +258,11 @@
     </section>
 
     <footer>
-        Forest Fire Management Division — Field Risk Assessment System
+        <div class="container">
+            <div class="footer-top">Forest Fire Management Division — Field Risk Assessment System</div>
+            <div class="footer-bottom">&copy; 2026 FireWatch. All rights reserved. &nbsp;|&nbsp; Built for field use
+                only. Not a substitute for official fire management protocols.</div>
+        </div>
     </footer>
 </body>
 

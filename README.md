@@ -18,14 +18,14 @@ FireWatch predicts the Fire Weather Index (FWI) from seven field readings and tr
 ## Project Structure
 
 ```
-firewatch/
+fwi-predictor/
 ├── models/
 │   ├── model.pkl
 │   └── scaler.pkl
 │
 ├── notebooks/
 │   ├── datasets/
-│   │   ├── algerian_forest_fire.csv
+│   │   ├── algerian_forest_fires.csv
 │   │   └── algerian_forest_fire_cleaned.csv
 │   ├── eda_data_prep.ipynb
 │   └── model.ipynb
@@ -39,7 +39,7 @@ firewatch/
 │       └── notfound.css
 │
 ├── templates/
-│   ├── home.html
+│   ├── index.html
 │   ├── assess.html
 │   ├── result.html
 │   └── 404.html

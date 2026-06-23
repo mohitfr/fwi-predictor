@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="FireWatch — Fire danger assessment tool for forest fire management officials."/>
     <title>Assessment Result — FireWatch</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
         href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}" />
 </head>
@@ -48,7 +50,7 @@
     <div class="page-head">
         <div class="container-narrow">
             <h1>Assessment Result</h1>
-            <p>Based on the readings submitted.</p>
+            <p>Assessment generated on {{ timestamp }}.</p>
         </div>
     </div>
 
@@ -75,6 +77,8 @@
                 </div>
             </div>
 
+            <div class="card-divider"></div>
+
             <div class="scale-card card">
                 <div class="scale-title">Where this falls on the scale</div>
                 <div class="scale-track">
@@ -88,6 +92,8 @@
                     <span>31+</span>
                 </div>
             </div>
+
+            <div class="card-divider"></div>
 
             <div class="summary-card card">
                 <div class="summary-title">Readings Submitted</div>
@@ -105,13 +111,18 @@
             <div class="actions-row">
                 <a href="{{ url_for('assess_form') }}" class="btn btn-primary">New Assessment</a>
                 <a href="{{ url_for('home') }}" class="btn btn-outline">Back to Overview</a>
+                <button onclick="window.print()" class="btn btn-outline">Print Report</button>
             </div>
 
         </div>
     </section>
 
     <footer>
-        Forest Fire Management Division — Field Risk Assessment System
+        <div class="container">
+            <div class="footer-top">Forest Fire Management Division — Field Risk Assessment System</div>
+            <div class="footer-bottom">&copy; 2026 FireWatch. All rights reserved. &nbsp;|&nbsp; Built for field use
+                only. Not a substitute for official fire management protocols.</div>
+        </div>
     </footer>
 
     <script>

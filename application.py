@@ -2,6 +2,7 @@
 
 import os
 from dotenv import load_dotenv
+from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for, session
 
 from config import fields, features, max_fwi_scale
@@ -45,6 +46,7 @@ def assess_submit():
     session['fwi'] = fwi
     session['risk'] = risk
     session['inputs'] = values
+    session['timestamp'] = datetime.now().strftime('%d %B %Y at %H:%M')
 
     return redirect(url_for('result'))
 
@@ -54,13 +56,14 @@ def result():
     fwi = session.get('fwi')
     risk = session.get('risk')
     inputs = session.get('inputs')
+    timestamp = session.get('timestamp')
 
     if fwi is None:
         return redirect(url_for('assess_form'))
 
     return render_template(
         'result.html', fwi=fwi, risk=risk, inputs=inputs,
-        fields=fields, max_scale=max_fwi_scale
+        fields=fields, max_scale=max_fwi_scale, timestamp=timestamp
     )
 
 
