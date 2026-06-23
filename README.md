@@ -6,6 +6,12 @@ A field tool for forest fire officials to assess daily fire danger from weather 
 
 FireWatch predicts the Fire Weather Index (FWI) from seven field readings and translates it into a plain danger rating with a recommended action — built for someone in the field, not a data scientist.
 
+## Live Demo
+
+http://firewatch-env.eba-kbuhcs4b.ap-south-1.elasticbeanstalk.com
+
+> Note: Running on HTTP — HTTPS and custom domain pending.
+
 ## Pages
 
 | Page | Route | Purpose |
